@@ -32,9 +32,9 @@ body p {
 
 
 .sidebar {
+  padding-left: 24px;
   width: 20vw;
   color: #1a1a1a;
-  padding-left: 10px;
 }
 
 .project-listing-container {
@@ -92,7 +92,7 @@ body p {
 }
 
 .title-container {
-  padding-bottom: 30px;
+  padding-bottom: 15px;
 }
 
 

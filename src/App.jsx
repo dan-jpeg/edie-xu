@@ -35,6 +35,107 @@ const projects = [
         images: ["https://i.ibb.co/1n9KFhH/183-A0937-Finished-Crop-2.jpg", "https://i.ibb.co/Z8FnjyZ/1-Artboard-1.png", "https://i.ibb.co/ygRym71/PNG-image.jpg", "https://i.ibb.co/zNvMFWS/183-A0940-Finished.jpg"],
     },
 
+    {
+        id: "4",
+        category: " ",
+        location: " ",
+        title: "allure of the abject",
+        description: "consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        material: "stoneware",
+        year: "2024",
+        images:  [
+            "https://i.ibb.co/HVDq0gg/1.png",
+            "https://i.ibb.co/HBN8Y8S/2.jpg",
+            "https://i.ibb.co/SKvM3pH/IMG-0136-copy.jpg",
+            "https://i.ibb.co/JF225xv/IMG-0219-copy.jpg",
+            "https://i.ibb.co/Bn3CK7D/IMG-0240-copy.jpg",
+            "https://i.ibb.co/BfnmSDx/IMG-0324-copy.jpg",
+            "https://i.ibb.co/qJfLttx/IMG-9961-copy.jpg",
+            "https://i.ibb.co/d0BcdQ9/Screenshot-2024-07-31-at-7-11-20-PM.png",
+            "https://i.ibb.co/y8hYf0q/Screenshot-2024-07-31-at-7-33-39-PM.png"
+        ],
+    },
+    {
+        id: "5",
+        category: " ",
+        location: " ",
+        title: "N...S...",
+        description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        material: "stoneware",
+        year: "2024",
+        images:  [
+            "https://i.ibb.co/zPz1y7f/1.png",
+            "https://i.ibb.co/QnjpLcL/Screenshot-2024-07-31-at-7-13-40-PM.png",
+            "https://i.ibb.co/vLscbV7/Screenshot-2024-08-01-at-7-09-44-PM.png"
+        ],
+    },
+
+    {
+        id: "6",
+        category: " ",
+        location: " ",
+        title: "Out of place",
+        description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        material: "stoneware",
+        year: "2024",
+        images:  [
+            "https://i.ibb.co/16J3rRD/1-V6-A8863-copy.jpg",
+            "https://i.ibb.co/6bXvn8W/1-V6-A8872-copy.jpg",
+            "https://i.ibb.co/4T0hLLw/1-V6-A8924-copy-2.jpg",
+            "https://i.ibb.co/FX9YQ0p/1-V6-A8962-copy.jpg",
+            "https://i.ibb.co/8s3FPvY/3-L7-A6632-copy.jpg",
+            "https://i.ibb.co/n6hbxWD/3-L7-A6633-copy.jpg",
+            "https://i.ibb.co/fD09Nk8/3-L7-A8971-copy.jpg",
+            "https://i.ibb.co/Tbkm63M/3-L7-A8974-copy.jpg",
+            "https://i.ibb.co/71KxxPS/3-L7-A8979-copy.jpg",
+            "https://i.ibb.co/LxCmkYV/3-L7-A8981-copy.jpg",
+            "https://i.ibb.co/RY133Ns/Wechat-IMG221-copy.jpg",
+            "https://i.ibb.co/V3vVrBK/Wechat-IMG223-copy-2.jpg"
+        ],
+    },
+
+    {
+        id: "7",
+        category: " ",
+        location: " ",
+        title: "Resonate with fragmentation",
+        description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        material: "stoneware",
+        year: "2024",
+        images: [
+            "https://i.ibb.co/dr91b9L/01-copy.jpg",
+            "https://i.ibb.co/6X8ykWx/02-copy.jpg",
+            "https://i.ibb.co/8z4zx7R/03-copy.jpg",
+            "https://i.ibb.co/89ZDKZ7/04-copy.png"
+        ]
+    },
+
+    {
+        id: "7",
+        category: " ",
+        location: " ",
+        title: "Somatic Attunement",
+        description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        material: "stoneware fired with greenware",
+        year: "2024",
+        images: [
+            "https://i.ibb.co/vJx0d4N/3L7A6311.jpg",
+            "https://i.ibb.co/swgvLrP/3L7A6383.jpg",
+            "https://i.ibb.co/ZXJb8sZ/3L7A6402.jpg",
+            "https://i.ibb.co/P16C1fg/3L7A6441.jpg",
+            "https://i.ibb.co/HzCQbgj/3L7A6517.jpg",
+            "https://i.ibb.co/FXkR815/3L7A6586.jpg",
+            "https://i.ibb.co/JmxrkBW/3L7A6591.jpg",
+            "https://i.ibb.co/DRFTQLp/3L7A6594.jpg",
+            "https://i.ibb.co/tHGJqLS/3L7A6601.jpg",
+            "https://i.ibb.co/LNJCyFG/3L7A6656.jpg",
+            "https://i.ibb.co/FgJmXJQ/DSC02337-1-copy.jpg"
+        ]
+    },
+
+
+
+
 
 ];
 
