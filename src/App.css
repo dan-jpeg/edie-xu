@@ -1,0 +1,191 @@
+body {
+  font-family: "Times New Roman", serif;
+  background-color: #fff;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+}
+
+body p {
+  margin: 0;
+}
+
+
+.container {
+  display: flex;
+  flex: 1; /* Take up remaining space in the body */
+  background-color: #fff;
+}
+
+.title-container {
+  display: block;
+  width: 100px;
+  padding-bottom: 60px;
+}
+
+
+
+.sidebar {
+  width: 20vw;
+  color: #1a1a1a;
+  padding-left: 10px;
+}
+
+.project-listing-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.sidebar h3 {
+  margin-bottom: 0.5em;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding-left: 1.6em
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 0.5em 0;
+}
+
+.sidebar li:hover {
+  text-decoration: underline;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Common styles applied regardless of the screen size */
+.project-image {
+  height: auto;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: justify-all;
+
+}
+
+ .listing-title:hover {
+  text-decoration: underline;
+   cursor: zoom-in;
+   color: #f9f9f9;
+}
+
+
+
+.listing-title {
+  font-weight: bolder;
+}
+.app-container {
+  display: flex;
+  flex: 1; /* Take up remaining space in the body */
+  flex-direction: row;
+}
+.displayed-project-container {
+  display: flex;
+
+
+}
+
+/* SINGLE COLUMN FOR NARROW SCREENS*/
+
+@media (max-width: 768px) {
+  .project-image {
+    width: 100%
+  }
+
+  .main-content {
+    flex: 1;
+    padding: 10vh 10px 0 10px
+  }
+  .displayed-project-container {
+    flex-direction: column;
+
+  }
+
+.project-listing-container {
+  flex-direction: column;
+}
+
+
+
+  aside {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .sidebar {
+    width: 80vw;
+    margin: 0;
+  }
+  .sidebar ul {
+    display: block;
+
+  }
+
+  .sidebar h3 {
+    padding-right: 1.6em;
+    font-size: 1em;
+  }
+  main {
+    padding: 0.5em;
+  }
+
+  .app-container {
+    flex-direction: column;
+  }
+
+  .image-container {
+    /*padding: 0 10em 0 10em;*/
+  }
+}
+
+/* TWO COLUMN FOR WIDER SCREENS*/
+@media (min-width: 769px) {
+  .project-image {
+    width: 600px;
+    object-fit: fill;
+  }
+
+  .project-listing-container {
+    flex-direction: row;
+    padding-left: 20vw;
+  }
+  .displayed-project-container {
+
+    padding-left: 23vw;
+    padding-top: 0vh;
+    flex-direction: column;
+  }
+
+  .title-container {
+    padding: 0 0 60px 0
+  }
+  .image-container {
+    width: 600px;
+  }
+  main {
+    flex: 1;
+    padding: 1em;
+  }
+
+  .app-container {
+    flex-direction: row;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
