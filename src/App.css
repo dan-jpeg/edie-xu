@@ -21,10 +21,14 @@ body p {
 
 .title-container {
   display: block;
-  width: 100px;
+  width: 160px;
   padding-bottom: 60px;
+  text-transform: lowercase;
 }
 
+.title-container p {
+  padding: 2px 0 2px 0;
+}
 
 
 .sidebar {
@@ -73,6 +77,12 @@ body p {
   text-align: justify-all;
 
 }
+
+.image-container p {
+  padding-bottom: 40px;
+}
+
+
 
  .listing-title:hover {
   text-decoration: underline;
