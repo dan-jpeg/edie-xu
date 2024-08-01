@@ -9,36 +9,10 @@ const projects = [
         location: "Shanghart, ShangHai",
         title: "limited intentionality",
 
-        description: "If, as Kant claimed, schematization is the very mechanism for human beings’ use of intelligence, then vision can be considered a\n" +
-            "premise for human reason. In the realm of contemporary art, Op Art once explored the relation between visual illusion and human\n" +
-            "cognition, involving what gestalt psychology researched the correlation between perceptual fields and perceived objects. In the history\n" +
-            "of ideas, one can trace back to the studies on intentionality by Franz Brentano, a philosopher and founder of act psychology from\n" +
-            "Austro-Hungarian Empire in the late 19th century. His significant contribution was to envisages the potential psychological objects as\n" +
-            "parts of something actual. In brief, within intentional activities, there exists an asymmetry between cognition and consciousness,\n" +
-            "namely, the impossible of correspondence between perceived object and perception itself. Till to the aesthetic notion proposed by\n" +
-            "object-oriented ontology, the very asymmetry expressed in artworks is categorized as “non-subjective correlation.” Therefore, the idea\n" +
-            "of arts is anchored based on a manifestation of impersonal elements. In the other words, the task of contemporary art aims to embody\n" +
-            "the concept of the “object-oriented”, in which consciousness, perception, and intentional activities of bodies are dominated by objects,\n" +
-            "and asymmetry is presented within such dominance. In this exhibition, we will see how different artists’ works present various aspects\n" +
-            "of the object-oriented, whereby they try to express a non-subject correlated and asymmetry triggered by intentional activities. It can be\n" +
-            "said that if the subjectivity and personality is posited as the ground of phenomenon, intentionality will be limited in intellectual\n" +
-            "concepts. How is emanation of intentionality possible? The asymmetry brought by artistic ideas may be an answer.\n" +
-            "Cai Lei’s Works present a re-examination of asymmetry between daily visual perception and spatial cognition, in which the\n" +
-            "conventional notions of space are compressed that lead to an illusory experience of geometric vision.\n" +
-            "Hang Chun-hui’s pieces restructure human visual perception through the textures of different materials, forming images that embody\n" +
-            "the ambiguity in a phenomenological sense, and thus the schematization is difficult to be determined.\n" +
-            "Liu Yue’s works attempt to explore the “directedness” of intentionality, for perception is always dominated by vision. In his work, to\n" +
-            "highlight the asymmetry between cognition and consciousness, visual perception is distorted or reduced to secondary perception.\n" +
-            "Su Chang’s works pinpoint the significance of the body schema to perception, which display the reversibility of bodies. In his works,\n" +
-            "the simulated limbs constitute the mirroring between perception and body sensation.\n" +
-            "Sun Wen-jia’s works delve into the relation between body schema and intentionality, with objects (lacquer and fossil) in his works\n" +
-            "implicating the history in a geological sense. Instead of subject correlated thought, the artist’s works conversely initiate the discourse\n" +
-            "of objects.\n" +
-            "Xu Si-yi ‘s works reveal the effect of sexuality on intentional activities, where the relation between body schema and eroticism always\n" +
-            "implies the object-oriented dimension.",
+        description: "if, as kant claimed, schematization is the very mechanism for human beings’ use of intelligence, then vision can be considered apremise for human reason.  edie xu‘s works reveal the effect of sexuality on intentional activities, where the relation between body schema and eroticism always implies the object-oriented dimension.",
         material: "stoneware",
         year: "2024",
-        images: ["https://i.ibb.co/1n9KFhH/183-A0937-Finished-Crop-2.jpg", "https://i.ibb.co/Z8FnjyZ/1-Artboard-1.png", "https://i.ibb.co/ygRym71/PNG-image.jpg", "https://i.ibb.co/zNvMFWS/183-A0940-Finished.jpg"],
+        images: ["https://i.ibb.co/5WSgCmG/BNL3762-copy-2.jpg","https://i.ibb.co/fnFLDGg/BNL3767-copy-2.jpg", "https://i.ibb.co/5WSgCmG/BNL3762-copy-2.jpg"]
     },
     {
         id: "2",

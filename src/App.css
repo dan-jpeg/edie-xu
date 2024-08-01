@@ -87,6 +87,9 @@ body p {
   padding-bottom: 40px;
 }
 
+.title-container {
+  padding-bottom: 30px;
+}
 
 
  .listing-title:hover {
@@ -109,18 +112,20 @@ body p {
   display: flex;
 
 
+
 }
 
 /* SINGLE COLUMN FOR NARROW SCREENS*/
 
 @media (max-width: 768px) {
   .project-image {
-    width: 100%
+    width: 100%;
+    padding-bottom: 50px
   }
 
   .main-content {
     flex: 1;
-    padding: 10vh 10px 0 10px
+    padding: 31vh 10px 0 10px
   }
   .displayed-project-container {
     flex-direction: column;
