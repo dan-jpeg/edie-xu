@@ -75,6 +75,10 @@ body p {
   height: auto;
 }
 
+.displayed-project-image {
+  height: auto;
+}
+
 .image-container {
   display: flex;
   flex-direction: column;
@@ -84,7 +88,7 @@ body p {
 }
 
 .image-container p {
-  padding-bottom: 40px;
+  padding-bottom: 50px;
 }
 
 .title-container {
@@ -121,6 +125,11 @@ body p {
   .project-image {
     width: 100%;
     padding-bottom: 50px
+  }
+
+  .displayed-project-image {
+    width: 100%;
+    padding-bottom: 8px;
   }
 
   .main-content {
@@ -173,6 +182,11 @@ body p {
 /* TWO COLUMN FOR WIDER SCREENS*/
 @media (min-width: 769px) {
   .project-image {
+    width: 600px;
+    object-fit: fill;
+  }
+
+  .displayed-project-image {
     width: 600px;
     object-fit: fill;
   }
