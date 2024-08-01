@@ -47,6 +47,11 @@ body p {
   margin-bottom: 0.5em;
 }
 
+.sidebar h3:hover {
+  margin-bottom: 1em;
+  cursor: context-menu;
+}
+
 .sidebar ul {
   list-style: none;
   padding-left: 1.6em
