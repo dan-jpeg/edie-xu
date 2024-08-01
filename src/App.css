@@ -2,10 +2,10 @@ body {
   font-family: "Times New Roman", serif;
   background-color: #fff;
   margin: 0;
-  height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 0.8rem;
+  color: black;
 }
 
 body p {
