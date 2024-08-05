@@ -43,6 +43,7 @@ body p {
 }
 
 
+
 .sidebar h3 {
   margin-bottom: 0.5em;
 }
@@ -69,7 +70,30 @@ body p {
 .main-content {
   flex: 1;
 }
+.video-player {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 600px;
+}
 
+.video-player video {
+  width: 100%;
+  height: auto;
+}
+
+
+.top-right-menu {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding-right: 36px;
+}
+
+.top-right-menu h3 {
+  padding-left : 12px;
+}
 /* Common styles applied regardless of the screen size */
 .project-image {
   height: auto;
@@ -119,12 +143,39 @@ body p {
 
 }
 
+.image-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+
+
+.nav-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.image-index {
+  position: relative;
+  right: 0%;
+}
 /* SINGLE COLUMN FOR NARROW SCREENS*/
 
 @media (max-width: 768px) {
   .project-image {
     width: 100%;
     padding-bottom: 50px
+  }
+
+  .video-player {
+    max-width: 100%;
   }
 
   .displayed-project-image {

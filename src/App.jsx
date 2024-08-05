@@ -1,6 +1,7 @@
 import { useState } from "react";
 import PropTypes from "prop-types";
 import './App.css';
+import DisplayedProject from "./DisplayedProduct.jsx";
 
 const projects = [
     {
@@ -52,11 +53,11 @@ const projects = [
         category: " ",
         location: " ",
         title: "oxygenated  ",
-        description: "orem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. ur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
+        description: "laborum",
         material: "stoneware",
         year: "2024",
         dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_03.png", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_04.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_05.jpg"],
+        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png", "https://i.ibb.co/TLsfwrc/1-Artboard-1.png", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_04.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_05.jpg"],
     },
     {
         id: "5",
@@ -216,6 +217,51 @@ const projects = [
 
 ];
 
+const videos = [
+    {
+        id: "v1",
+        title: "石子路",
+        year: "2023",
+        duration: "7 Min",
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/%E7%9F%B3%E5%AD%90%E8%B7%AF.mov"
+    },
+    {
+        id: "v2",
+        title: "Erase",
+        year: "2020",
+        duration: "12min",
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/erase.mov"
+    },
+    {
+        id: "v3",
+        title: "Dog Walk",
+        year: "2020",
+        duration: "6min",
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/dog-walk.mov"
+    },
+    {
+        id: "v4",
+        title: "Skin Contact",
+        year: "2019",
+        duration: "19min",
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/skin-contact.mp4"
+    },
+    {
+        id: "v5",
+        title: "Re",
+        year: "2019",
+        duration: "8min",
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/re.MP4"
+    },
+    {
+        id: "v6",
+        title: "Untitled",
+        year: "2019",
+        duration: "13min",
+        videoUrl: ""
+    }
+];
+
 
 
 
@@ -224,26 +270,41 @@ const projects = [
 
 const App = () => {
     const [selectedProject, setSelectedProject] = useState(null);
+    const [selectedVideo, setSelectedVideo] = useState(null);
+    const [sideBarExpanded, setSideBarExpanded] = useState(false);
+    const [videoSideBarExpanded, setVideoSideBarExpanded] = useState(false);
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
+        setSelectedVideo(null);
     };
 
-
-
-    const [sideBarExpanded, setSideBarExpanded] = useState(false);
+    const handleVideoClick = (video) => {
+        setSelectedProject(null);
+        setSelectedVideo(null);  // Clear the current video
+        setTimeout(() => setSelectedVideo(video), 1);  // Set new video after a short delay
+    };
 
     const handleWorksClick = () => {
         if (sideBarExpanded) {
             setSelectedProject(null);
         }
         setSideBarExpanded(!sideBarExpanded);
+        setVideoSideBarExpanded(false);
+    };
+
+    const handleVideoWorksClick = () => {
+        if (videoSideBarExpanded) {
+            setSelectedVideo(null);
+        }
+        setVideoSideBarExpanded(!videoSideBarExpanded);
+        setSideBarExpanded(false);
     };
 
     return (
         <div className="app-container">
-            <aside className={`sidebar ${sideBarExpanded ? 'expanded' : 'collapsed'}`}>
-                <h3 onClick={handleWorksClick}>edie xu</h3>
+            <aside className={`sidebar ${sideBarExpanded || videoSideBarExpanded ? 'expanded' : 'collapsed'}`}>
+                <h3 onClick={() => {setSideBarExpanded(false); setVideoSideBarExpanded(false);}}>edie xu</h3>
                 <h3 className="clickable" onClick={handleWorksClick}>selected works</h3>
                 <ul>
                     {sideBarExpanded && projects.map((project) => (
@@ -252,10 +313,20 @@ const App = () => {
                         </li>
                     ))}
                 </ul>
+                <h3 className="clickable" onClick={handleVideoWorksClick}>video & performances</h3>
+                <ul>
+                    {videoSideBarExpanded && videos.map((video) => (
+                        <li key={video.id} onClick={() => handleVideoClick(video)}>
+                            {video.title}
+                        </li>
+                    ))}
+                </ul>
             </aside>
             <main className="main-content">
-            {selectedProject ? (
-                    <DisplayedProject project={selectedProject}/>
+                {selectedProject ? (
+                    <DisplayedProject project={selectedProject} />
+                ) : selectedVideo ? (
+                    <DisplayedVideo video={selectedVideo} />
                 ) : (
                     projects.map((project) => (
                         <ProjectListing
@@ -266,9 +337,14 @@ const App = () => {
                     ))
                 )}
             </main>
+            <aside className="top-right-menu">
+                <h3>download cv</h3>
+                <h3>contact</h3>
+            </aside>
         </div>
     );
 };
+
 
 const ProjectListing = ({ project, onProjectClick }) => {
     return (
@@ -286,23 +362,60 @@ const ProjectListing = ({ project, onProjectClick }) => {
     );
 };
 
-const DisplayedProject = ({ project }) => {
+// const DisplayedProject = ({ project }) => {
+//     return (
+//         <div className="displayed-project-container">
+//             <div className="title-container">
+//                 <p>{project.title}</p>
+//                 <p>{project.material}</p>
+//                 <p>{project.category}</p>
+//                 <p>{project.location}</p>
+//             </div>
+//             <div className="image-container">
+//                 <p >{project.description}</p>
+//                 {project.images.map((image, index) => (
+//                     <img key={index} className="displayed-project-image" src={image} alt={`${project.title} ${index}`}/>
+//                 ))}
+//             </div>
+//         </div>
+//     );
+// };
+
+const DisplayedVideo = ({ video }) => {
     return (
-        <div className="displayed-project-container">
-            <div className="title-container">
-                <p>{project.title}</p>
-                <p>{project.material}</p>
-                <p>{project.category}</p>
-                <p>{project.location}</p>
-            </div>
-            <div className="image-container">
-                <p >{project.description}</p>
-                {project.images.map((image, index) => (
-                    <img key={index} className="displayed-project-image" src={image} alt={`${project.title} ${index}`}/>
-                ))}
-            </div>
+        <div className="displayed-video-container">
+            <h2>{video.title}</h2>
+            <p>{video.year}</p>
+            <p>{video.duration}</p>
+            {video.videoUrl ? (
+                <div className="video-player">
+                    <video
+                        controls
+                        preload="metadata"
+                        poster="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_01.jpeg"
+                    >
+                        <source src={video.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            ) : (
+                <div className="video-player">
+                    <p>Video not available</p>
+                </div>
+            )}
         </div>
     );
+};
+
+
+
+DisplayedVideo.propTypes = {
+    video: PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        year: PropTypes.string.isRequired,
+        duration: PropTypes.string.isRequired,
+        videoUrl: PropTypes.string
+    }).isRequired
 };
 
 ProjectListing.propTypes = {
@@ -317,14 +430,4 @@ ProjectListing.propTypes = {
     onProjectClick: PropTypes.func.isRequired,
 };
 
-DisplayedProject.propTypes = {
-    project: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        material: PropTypes.string.isRequired,
-        category: PropTypes.string.isRequired,
-        location: PropTypes.string.isRequired,
-        images: PropTypes.arrayOf(PropTypes.string).isRequired
-    }).isRequired
-};
 export default App;
