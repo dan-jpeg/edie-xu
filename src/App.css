@@ -182,7 +182,7 @@ body p {
 /* TWO COLUMN FOR WIDER SCREENS*/
 @media (min-width: 769px) {
   .project-image {
-    width: 600px;
+    width: 300px;
     object-fit: fill;
   }
 
@@ -206,7 +206,7 @@ body p {
     padding: 0 0 60px 0
   }
   .image-container {
-    width: 600px;
+    width: 600px  ;
   }
 
   main {
