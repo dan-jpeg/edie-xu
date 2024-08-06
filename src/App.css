@@ -73,7 +73,7 @@ body p {
 .video-player {
   margin-top: 20px;
   width: 100%;
-  max-width: 600px;
+  max-width: 61vw;
 }
 
 .video-player video {
@@ -84,7 +84,7 @@ body p {
 
 .top-right-menu {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   position: fixed;
   top: 0;
   right: 0;
@@ -93,6 +93,7 @@ body p {
 
 .top-right-menu h3 {
   padding-left : 12px;
+  font-size: 0.9em;
 }
 /* Common styles applied regardless of the screen size */
 .project-image {
@@ -174,6 +175,12 @@ body p {
     padding-bottom: 50px
   }
 
+
+  .top-right-menu {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+  }
   .video-player {
     max-width: 100%;
   }
@@ -238,7 +245,7 @@ body p {
   }
 
   .displayed-project-image {
-    width: 600px;
+    width: 400px;
     object-fit: fill;
   }
 
@@ -257,7 +264,7 @@ body p {
     padding: 0 0 60px 0
   }
   .image-container {
-    width: 600px  ;
+    width: 400px  ;
   }
 
   main {

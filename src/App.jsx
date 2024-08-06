@@ -30,7 +30,7 @@ const projects = [
         id: "2",
         category: " ",
         location: " ",
-        title: "0 20 24 ",
+        title: "0 20 ",
         description: "",
         material: "stoneware",
         year: "2023",
@@ -223,42 +223,48 @@ const videos = [
         title: "石子路",
         year: "2023",
         duration: "7 Min",
-        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/%E7%9F%B3%E5%AD%90%E8%B7%AF.mov"
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/%E7%9F%B3%E5%AD%90%E8%B7%AF.mov",
+        thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg"
     },
     {
         id: "v2",
         title: "Erase",
         year: "2020",
         duration: "12min",
-        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/erase.mov"
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/erase.mov",
+        thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/erase_thumbnail.jpeg"
     },
     {
         id: "v3",
         title: "Dog Walk",
         year: "2020",
         duration: "6min",
-        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/dog-walk.mov"
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/dog-walk.mov",
+        thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/dog-walk_thumbnail.jpeg"
     },
     {
         id: "v4",
         title: "Skin Contact",
         year: "2019",
         duration: "19min",
-        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/skin-contact.mp4"
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/skin-contact.mp4",
+        thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/skin-contact_thumbnail.jpeg"
     },
     {
         id: "v5",
         title: "Re",
         year: "2019",
         duration: "8min",
-        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/re.MP4"
+        videoUrl: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/videos/re.MP4",
+        thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/re_thumbnail.jpeg"
     },
     {
         id: "v6",
         title: "Untitled",
         year: "2019",
         duration: "13min",
-        videoUrl: ""
+        videoUrl: "",
+        thumbnail: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/%E3%80%8A%E7%9F%B3%E5%AD%90%E8%B7%AF%E3%80%8B_thumbnail.jpeg"
     }
 ];
 
@@ -290,7 +296,6 @@ const App = () => {
             setSelectedProject(null);
         }
         setSideBarExpanded(!sideBarExpanded);
-        setVideoSideBarExpanded(false);
     };
 
     const handleVideoWorksClick = () => {
@@ -328,6 +333,7 @@ const App = () => {
                 ) : selectedVideo ? (
                     <DisplayedVideo video={selectedVideo} />
                 ) : (
+
                     projects.map((project) => (
                         <ProjectListing
                             project={project}
@@ -392,7 +398,7 @@ const DisplayedVideo = ({ video }) => {
                     <video
                         controls
                         preload="metadata"
-                        poster="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_01.jpeg"
+                        poster={video.thumbnail}
                     >
                         <source src={video.videoUrl} type="video/mp4" />
                         Your browser does not support the video tag.
@@ -414,7 +420,8 @@ DisplayedVideo.propTypes = {
         title: PropTypes.string.isRequired,
         year: PropTypes.string.isRequired,
         duration: PropTypes.string.isRequired,
-        videoUrl: PropTypes.string
+        videoUrl: PropTypes.string,
+        thumbnail: PropTypes.string
     }).isRequired
 };
 
