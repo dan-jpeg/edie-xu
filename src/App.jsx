@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import './App.css';
 import DisplayedProject from "./DisplayedProject.jsx";
-import { projects, videos } from "./projects-and-videos.js"
+import { projects, videos, exhibitions } from "./projects-and-videos.js"
 
 
 const App = () => {
@@ -117,7 +117,7 @@ const App = () => {
                     <DisplayedVideo video={selectedVideo}/>
                 ) : (
                     <div className="home-project-list-right hide-scrollbar" ref={mainContentRef}>
-                        {projects.map((project) => (
+                        {exhibitions.map((project) => (
                             <ProjectListing
                                 project={project}
                                 key={project.id}
@@ -141,9 +141,9 @@ const ProjectListing = ({project, onProjectClick}) => {
         <div className="project-listing-container" onClick={() => onProjectClick(project)}>
             <div className="title-container">
                 <p className="listing-title">{project.title}</p>
-                <p>{project.material}</p>
-                <p>{project.category}</p>
+                {/*<p>{project.material}</p>*/}
                 <p>{project.location}</p>
+                <p>{project.date}</p>
             </div>
             <div className="image-container">
                 <img className="project-image" src={project.images[0]} alt={project.title} />
@@ -198,6 +198,7 @@ ProjectListing.propTypes = {
         material: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
         location: PropTypes.string.isRequired,
+        date: PropTypes.string.isRequired,
         images: PropTypes.arrayOf(PropTypes.string).isRequired
     }).isRequired,
     onProjectClick: PropTypes.func.isRequired,

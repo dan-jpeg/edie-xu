@@ -74,11 +74,7 @@ const projects = [
     //     description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     //     material: "stoneware",
     //     year: "2024",
-    //     images:  [
-    //         "https://i.ibb.co/zPz1y7f/1.png",
-    //         "https://i.ibb.co/QnjpLcL/Screenshot-2024-07-31-at-7-13-40-PM.png",
-    //         "https://i.ibb.co/vLscbV7/Screenshot-2024-08-01-at-7-09-44-PM.png"
-    //     ],
+
     // },
 
     {
@@ -148,43 +144,8 @@ const projects = [
     //         "https://i.ibb.co/V3vVrBK/Wechat-IMG223-copy-2.jpg"
     //     ],
     // },
-    // {
-    //     id: "7",
-    //     category: " ",
-    //     location: " ",
-    //     title: "Resonate with fragmentation",
-    //     description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    //     material: "stoneware",
-    //     year: "2024",
-    //     images: [
-    //         "https://i.ibb.co/dr91b9L/01-copy.jpg",
-    //         "https://i.ibb.co/6X8ykWx/02-copy.jpg",
-    //         "https://i.ibb.co/8z4zx7R/03-copy.jpg",
-    //         "https://i.ibb.co/89ZDKZ7/04-copy.png"
-    //     ]
-    // },
-    // {
-    //     id: "8",
-    //     category: " ",
-    //     location: " ",
-    //     title: "Somatic Attunement",
-    //     description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    //     material: "stoneware fired with greenware",
-    //     year: "2024",
-    //     images: [
-    //         "https://i.ibb.co/vJx0d4N/3L7A6311.jpg",
-    //         "https://i.ibb.co/swgvLrP/3L7A6383.jpg",
-    //         "https://i.ibb.co/ZXJb8sZ/3L7A6402.jpg",
-    //         "https://i.ibb.co/P16C1fg/3L7A6441.jpg",
-    //         "https://i.ibb.co/HzCQbgj/3L7A6517.jpg",
-    //         "https://i.ibb.co/FXkR815/3L7A6586.jpg",
-    //         "https://i.ibb.co/JmxrkBW/3L7A6591.jpg",
-    //         "https://i.ibb.co/DRFTQLp/3L7A6594.jpg",
-    //         "https://i.ibb.co/tHGJqLS/3L7A6601.jpg",
-    //         "https://i.ibb.co/LNJCyFG/3L7A6656.jpg",
-    //         "https://i.ibb.co/FgJmXJQ/DSC02337-1-copy.jpg"
-    //     ]
-    // },
+
+
 
     // {
     //     id: "10",
@@ -266,3 +227,132 @@ const videos = [
 ];
 
 export { videos };
+
+const exhibitions = [
+    {
+        id: "e0",
+        category: "Group Exhibition",
+        location: "Shanghart, Shang Hai",
+        title: "limited intentionality",
+        description: "Group Exhibition with Cai Lei, Hang Chunhui, Liu Yue, Su Chang, Sun Wenjia\n" +
+            "Curated by Zhang Jiarong",
+        material: "stoneware",
+        date: "2024 03. 22-06. 01",
+        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/limited-intentionality_01.jpeg","https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_02.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_03.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_04.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_05.jpeg"]
+    },
+    {
+        id: "e1",
+        category: " ",
+        location: "Beijing Commune",
+        title: "Out of place",
+        description: "Group exhibition with Chang Yuchen, Ge Yulu, Hu Xiaoyuan, Li Binyuan, Li Shuang, Zhao Zhiliang, and Zhou Yilun,",
+        material: "stoneware",
+        date: "2024. 01. 26-03. 02",
+        images:  [
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/out-of-place_01.jpeg",
+            "https://i.ibb.co/6bXvn8W/1-V6-A8872-copy.jpg",
+            "https://i.ibb.co/4T0hLLw/1-V6-A8924-copy-2.jpg",
+            "https://i.ibb.co/FX9YQ0p/1-V6-A8962-copy.jpg",
+            "https://i.ibb.co/8s3FPvY/3-L7-A6632-copy.jpg",
+            "https://i.ibb.co/n6hbxWD/3-L7-A6633-copy.jpg",
+            "https://i.ibb.co/fD09Nk8/3-L7-A8971-copy.jpg",
+            "https://i.ibb.co/Tbkm63M/3-L7-A8974-copy.jpg",
+            "https://i.ibb.co/71KxxPS/3-L7-A8979-copy.jpg",
+            "https://i.ibb.co/LxCmkYV/3-L7-A8981-copy.jpg",
+            "https://i.ibb.co/RY133Ns/Wechat-IMG221-copy.jpg",
+            "https://i.ibb.co/V3vVrBK/Wechat-IMG223-copy-2.jpg"
+        ],
+    },
+    {
+        id: "e2",
+        category: " ",
+        location: "Ginkgo Space, Shanghai",
+        title: "Resonate with fragmentation",
+        description: "",
+        material: "stoneware",
+        date: "2024. 01. 06-03. 09",
+        images: [
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/resonate-with-fragmentation_01.jpeg",
+            "https://i.ibb.co/6X8ykWx/02-copy.jpg",
+            "https://i.ibb.co/8z4zx7R/03-copy.jpg",
+            "https://i.ibb.co/89ZDKZ7/04-copy.png"
+        ]
+    },
+    {
+        id: "e3",
+        category: " ",
+        location: "Caijin Space, Beijing",
+        title: "N 39.984036 S 116.496563",
+        description: "",
+        material: "stoneware",
+        date: "2023. 06. 26-08. 31",
+        images:  [
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/n-s_01.jpeg",
+            "https://i.ibb.co/QnjpLcL/Screenshot-2024-07-31-at-7-13-40-PM.png",
+            "https://i.ibb.co/vLscbV7/Screenshot-2024-08-01-at-7-09-44-PM.png"
+        ],
+    },
+    {
+        id: "e4",
+        category: " ",
+        location: "SITE Gallery, Chicago ",
+        title: "Allure of the abject",
+        description: "",
+        material: "stoneware",
+        date: "2022. 06. 03-16. 14",
+        images:  [
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/allure-of-the-abject_01.jpeg",
+            "https://i.ibb.co/QnjpLcL/Screenshot-2024-07-31-at-7-13-40-PM.png",
+            "https://i.ibb.co/vLscbV7/Screenshot-2024-08-01-at-7-09-44-PM.png"
+        ],
+    },
+
+
+    {
+        id: "e5",
+        category: " ",
+        location: "Studio Gallery, ShangHai",
+        title: "Somatic Attunement",
+        description: "",
+        material: "stoneware fired with greenware",
+        date: "2021. 09. 12-10. 17",
+        images: [
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/somatic-attunement_01.png",
+            "https://i.ibb.co/swgvLrP/3L7A6383.jpg",
+            "https://i.ibb.co/ZXJb8sZ/3L7A6402.jpg",
+            "https://i.ibb.co/P16C1fg/3L7A6441.jpg",
+            "https://i.ibb.co/HzCQbgj/3L7A6517.jpg",
+            "https://i.ibb.co/FXkR815/3L7A6586.jpg",
+            "https://i.ibb.co/JmxrkBW/3L7A6591.jpg",
+            "https://i.ibb.co/DRFTQLp/3L7A6594.jpg",
+            "https://i.ibb.co/tHGJqLS/3L7A6601.jpg",
+            "https://i.ibb.co/LNJCyFG/3L7A6656.jpg",
+            "https://i.ibb.co/FgJmXJQ/DSC02337-1-copy.jpg"
+        ]
+    },
+    {
+        id: "e5",
+        category: " ",
+        location: "Zero Gallery ",
+        title: "Outside of Bodies",
+        description: "",
+        material: "stoneware fired with greenware",
+        date: "2021. (07)",
+        images: [
+            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie+exhib+cover+photos/outside-of-bodies_01.png",
+            "https://i.ibb.co/swgvLrP/3L7A6383.jpg",
+            "https://i.ibb.co/ZXJb8sZ/3L7A6402.jpg",
+            "https://i.ibb.co/P16C1fg/3L7A6441.jpg",
+            "https://i.ibb.co/HzCQbgj/3L7A6517.jpg",
+            "https://i.ibb.co/FXkR815/3L7A6586.jpg",
+            "https://i.ibb.co/JmxrkBW/3L7A6591.jpg",
+            "https://i.ibb.co/DRFTQLp/3L7A6594.jpg",
+            "https://i.ibb.co/tHGJqLS/3L7A6601.jpg",
+            "https://i.ibb.co/LNJCyFG/3L7A6656.jpg",
+            "https://i.ibb.co/FgJmXJQ/DSC02337-1-copy.jpg"
+        ]
+    },
+
+]
+
+export { exhibitions };
