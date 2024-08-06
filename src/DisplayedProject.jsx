@@ -22,31 +22,31 @@ const DisplayedProject = ({ project }) => {
     return (
         <div className="displayed-project-container">
             <div className="title-container">
-                <p>{project.title}</p>
+                <p className="displayed-project-title">{project.title}</p>
                 <p>{project.material}</p>
                 <p>{project.category}</p>
                 <p>{project.location}</p>
             </div>
-            <div className="image-container">
-                <p>{project.description}</p>
-                <div className="image-navigation">
-                    <button onClick={goToPreviousImage} className="nav-button">
-                        <ChevronLeft size={24} />
-                    </button>
-                    <div className="image-wrapper">
-                        <img
-                            className="displayed-project-image"
-                            src={project.images[currentImageIndex]}
-                            alt={`${project.title} ${currentImageIndex + 1}`}
-                        />
-                        <p className="image-index">
-                            {currentImageIndex + 1}/{project.images.length}
-                        </p>
-                    </div>
-                    <button onClick={goToNextImage} className="nav-button">
-                        <ChevronRight size={24} />
-                    </button>
+            <div className="single-image-container">
+
+
+                <div className="image-wrapper">
+                    <img
+                        className="displayed-project-image"
+                        src={project.images[currentImageIndex]}
+                        key={project.images[currentImageIndex]}
+                        alt={`${project.title} ${currentImageIndex + 1}`}
+                    />
+                    <p className="image-index">
+                        {currentImageIndex + 1}/{project.images.length}
+                    </p>
                 </div>
+
+                <div className="image-navigation">
+                    <h2 onClick={goToPreviousImage}> {"<"} </h2>
+                    <h2 onClick={goToNextImage}> {">"} </h2>
+                </div>
+                <p>{project.description}</p>
             </div>
         </div>
     );

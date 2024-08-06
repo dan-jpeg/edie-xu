@@ -6,22 +6,41 @@ body {
   flex-direction: column;
   font-size: 0.8rem;
   color: black;
+
 }
 
+
+.displayed-project-title {
+  font-size : 1.2em;
+  font-style: italic;
+}
 body p {
   margin: 0;
 }
 
+.hide-scrollbar {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
 
 .container {
   display: flex;
   flex: 1; /* Take up remaining space in the body */
   background-color: #fff;
 }
+.image-container {
+  padding: 0 0 16px 0;
+}
 
 .title-container {
   display: block;
-  width: 160px;
+  width: 200px;
   padding-bottom: 60px;
   text-transform: lowercase;
 }
@@ -33,8 +52,9 @@ body p {
 
 .sidebar {
   padding-left: 24px;
-  width: 20vw;
+  width: 200px;
   color: #1a1a1a;
+  z-index: 1;
 }
 
 .project-listing-container {
@@ -67,9 +87,21 @@ body p {
   text-decoration: underline;
 }
 
+.home-project-list-right {
+  position: absolute;
+  top: 52px;
+  right: 48px;
+  bottom: 0;
+  padding-left: 25vw;
+  overflow-y: auto;
+  max-height: calc(100vh - 52px);
+  padding-bottom: 60px; /* Add some padding at the bottom for better scrolling experience */
+}
 .main-content {
   flex: 1;
+
 }
+
 .video-player {
   margin-top: 20px;
   width: 100%;
@@ -82,19 +114,26 @@ body p {
 }
 
 
+
+
 .top-right-menu {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   position: fixed;
   top: 0;
-  right: 0;
-  padding-right: 36px;
+  right: 24px;
+  padding-right: 24px;
+  transition: opacity 0.3s ease-out;
 }
 
 .top-right-menu h3 {
-  padding-left : 12px;
-  font-size: 0.9em;
+  padding-right: 8px;
 }
+.top-right-menu.hidden {
+  opacity: 0;
+}
+
+
 /* Common styles applied regardless of the screen size */
 .project-image {
   height: auto;
@@ -109,6 +148,7 @@ body p {
   flex-direction: column;
   align-items: center;
   text-align: justify-all;
+  padding-right: 12px;
 
 }
 
@@ -131,6 +171,7 @@ body p {
 
 .listing-title {
   font-weight: bolder;
+  font-style: italic;
 }
 .app-container {
   display: flex;
@@ -139,6 +180,7 @@ body p {
 }
 .displayed-project-container {
   display: flex;
+  padding-top: 52px;
 
 
 
@@ -177,8 +219,9 @@ body p {
 
 
   .top-right-menu {
-    top: auto;
-    bottom: 0;
+    top: 0;
+    right: 0;
+    font-size: 0.8em;
     flex-direction: row;
   }
   .video-player {
@@ -203,6 +246,9 @@ body p {
   flex-direction: column;
 }
 
+  .home-project-list-right {
+    position: relative;
+  }
 
 
   aside {
@@ -232,9 +278,7 @@ body p {
     flex-direction: column;
   }
 
-  .image-container {
-    /*padding: 0 10em 0 10em;*/
-  }
+
 }
 
 /* TWO COLUMN FOR WIDER SCREENS*/
@@ -245,7 +289,7 @@ body p {
   }
 
   .displayed-project-image {
-    width: 400px;
+    width: 41vw;
     object-fit: fill;
   }
 
@@ -254,18 +298,16 @@ body p {
     padding-left: 20vw;
   }
   .displayed-project-container {
-
+    width: 41vw;
     padding-left: 23vw;
-    padding-top: 0vh;
+    padding-top: 52px;
     flex-direction: column;
   }
 
   .title-container {
-    padding: 0 0 60px 0
+    padding: 0 40px 60px 0
   }
-  .image-container {
-    width: 400px  ;
-  }
+
 
   main {
     flex: 1;
