@@ -21,8 +21,8 @@ const App = () => {
 
     const handleVideoClick = (video) => {
         setSelectedProject(null);
-        setSelectedVideo(null);  // Clear the current video
-        setTimeout(() => setSelectedVideo(video), 1);  // Set new video after a short delay
+        setSelectedVideo(null);  
+        setTimeout(() => setSelectedVideo(video), 1);  
     };
 
     const handleWorksClick = () => {
@@ -38,7 +38,7 @@ const App = () => {
         setSideBarExpanded(false);
         setVideoSideBarExpanded(false);
 
-        // Scroll to the top of the main content area
+       
         if (mainContentRef.current) {
             mainContentRef.current.scrollTo({
                 top: 0,
@@ -60,15 +60,15 @@ const App = () => {
     const handleScroll = useCallback(() => {
         setIsScrolling(true);
 
-        // Clear the existing timeout
+        
         if (scrollTimeout) {
             clearTimeout(scrollTimeout);
         }
 
-        // Set a new timeout
+      
         const timeout = setTimeout(() => {
             setIsScrolling(false);
-        }, 500); // Adjust this value to change how long after scrolling stops before the menu reappears
+        }, 500); 
 
         setScrollTimeout(timeout);
     }, [scrollTimeout]);
