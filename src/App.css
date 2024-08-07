@@ -126,8 +126,15 @@ body p {
   transition: opacity 0.3s ease-out;
 }
 
-.top-right-menu h3 {
-  padding-right: 8px;
+.top-right-menu a, p {
+  color: black;
+  padding-right: 24px;
+  padding-top: 12px;
+  font-size: 1.2em;
+}
+
+.top-right-menu a:hover{
+  color: aliceblue;
 }
 .top-right-menu.hidden {
   opacity: 0;

@@ -128,15 +128,18 @@ const App = () => {
                 )}
             </main>
             <aside className={`top-right-menu ${isScrolling ? 'hidden' : ''}`}>
-                <h3>download cv</h3>
-                <h3>contact</h3>
+                <a href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie_xu_cv.pdf" target="_blank" rel="noopener noreferrer">
+                    download cv
+                </a>
+                    <p>contact</p>
             </aside>
         </div>
-    );
+);
 };
 
 
-const ProjectListing = ({project, onProjectClick}) => {
+const ProjectListing = ({
+    project, onProjectClick}) => {
     return (
         <div className="project-listing-container" onClick={() => onProjectClick(project)}>
             <div className="title-container">
