@@ -2,7 +2,6 @@
 
 import { useState } from 'react';
 import PropTypes from 'prop-types';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const DisplayedProject = ({ project }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);

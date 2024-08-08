@@ -4,25 +4,28 @@ import './App.css';
 import DisplayedProject from "./DisplayedProject.jsx";
 import { projects, videos, exhibitions } from "./projects-and-videos.js"
 
-
 const App = () => {
     const [selectedProject, setSelectedProject] = useState(null);
     const [selectedVideo, setSelectedVideo] = useState(null);
     const [sideBarExpanded, setSideBarExpanded] = useState(false);
     const [videoSideBarExpanded, setVideoSideBarExpanded] = useState(false);
+    const [contactInfoVisible, setContactInfoVisible] = useState(false);
+    const [isScrolling, setIsScrolling] = useState(false);
+    const [scrollTimeout, setScrollTimeout] = useState(null);
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+    const mainContentRef = useRef(null);
+    const contactInfoRef = useRef(null);
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
         setSelectedVideo(null);
     };
 
-    const mainContentRef = useRef(null);
-
-
     const handleVideoClick = (video) => {
         setSelectedProject(null);
-        setSelectedVideo(null);  // Clear the current video
-        setTimeout(() => setSelectedVideo(video), 1);  // Set new video after a short delay
+        setSelectedVideo(null);
+        setTimeout(() => setSelectedVideo(video), 1);
     };
 
     const handleWorksClick = () => {
@@ -37,8 +40,8 @@ const App = () => {
         setSelectedVideo(null);
         setSideBarExpanded(false);
         setVideoSideBarExpanded(false);
+        setContactInfoVisible(false);
 
-        // Scroll to the top of the main content area
         if (mainContentRef.current) {
             mainContentRef.current.scrollTo({
                 top: 0,
@@ -46,6 +49,7 @@ const App = () => {
             });
         }
     }
+
     const handleVideoWorksClick = () => {
         if (videoSideBarExpanded) {
             setSelectedVideo(null);
@@ -54,21 +58,26 @@ const App = () => {
         setSideBarExpanded(false);
     };
 
-    const [isScrolling, setIsScrolling] = useState(false);
-    const [scrollTimeout, setScrollTimeout] = useState(null);
+    const handleContactClick = () => {
+        setContactInfoVisible(!contactInfoVisible);
+    }
+
+    const handleOutsideClick = (e) => {
+        if (contactInfoVisible && contactInfoRef.current && !contactInfoRef.current.contains(e.target)) {
+            setContactInfoVisible(false);
+        }
+    }
 
     const handleScroll = useCallback(() => {
         setIsScrolling(true);
 
-        // Clear the existing timeout
         if (scrollTimeout) {
             clearTimeout(scrollTimeout);
         }
 
-        // Set a new timeout
         const timeout = setTimeout(() => {
             setIsScrolling(false);
-        }, 500); // Adjust this value to change how long after scrolling stops before the menu reappears
+        }, 500);
 
         setScrollTimeout(timeout);
     }, [scrollTimeout]);
@@ -79,6 +88,14 @@ const App = () => {
             mainContent.addEventListener('scroll', handleScroll);
         }
 
+        document.addEventListener('click', handleOutsideClick);
+
+        const handleResize = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        window.addEventListener('resize', handleResize);
+
         return () => {
             if (mainContent) {
                 mainContent.removeEventListener('scroll', handleScroll);
@@ -86,6 +103,8 @@ const App = () => {
             if (scrollTimeout) {
                 clearTimeout(scrollTimeout);
             }
+            document.removeEventListener('click', handleOutsideClick);
+            window.removeEventListener('resize', handleResize);
         };
     }, [handleScroll, scrollTimeout]);
 
@@ -128,18 +147,25 @@ const App = () => {
                 )}
             </main>
             <aside className={`top-right-menu ${isScrolling ? 'hidden' : ''}`}>
-                <a href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie_xu_cv.pdf" target="_blank" rel="noopener noreferrer">
+                <a href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie_xu_cv.pdf" target="_blank"
+                   rel="noopener noreferrer">
                     download cv
                 </a>
-                    <p>contact</p>
             </aside>
+            <div className="contact-menu">
+                <h3>c</h3>
+                <p>Studio</p>
+                <p>New York, USA</p>
+                <p>e: <a href="mailto:ediexxu@gmail.com">ediexxu@gmail.com</a></p>
+                <p>i: e__xu</p>
+            </div>
         </div>
-);
+    );
 };
 
-
 const ProjectListing = ({
-    project, onProjectClick}) => {
+                            project, onProjectClick
+                        }) => {
     return (
         <div className="project-listing-container" onClick={() => onProjectClick(project)}>
             <div className="title-container">
