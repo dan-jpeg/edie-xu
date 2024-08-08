@@ -136,6 +136,9 @@ const App = () => {
                     <DisplayedVideo video={selectedVideo}/>
                 ) : (
                     <div className="home-project-list-right hide-scrollbar" ref={mainContentRef}>
+                        <div className="container-header">
+                            <h3> Selected exhibitions </h3>
+                        </div>
                         {exhibitions.map((project) => (
                             <ProjectListing
                                 project={project}
@@ -152,12 +155,13 @@ const App = () => {
                     download cv
                 </a>
             </aside>
+
             <div className="contact-menu">
-                <h3>c</h3>
-                <p>Studio</p>
-                <p>New York, USA</p>
+                <h3>edie xu</h3>
+                {/*<p>Studio</p>*/}
+                <p>s: New York, USA</p>
                 <p>e: <a href="mailto:ediexxu@gmail.com">ediexxu@gmail.com</a></p>
-                <p>i: e__xu</p>
+                <p>i: <a href="http://instagram.com/e__xu">e__xu</a></p>
             </div>
         </div>
     );
