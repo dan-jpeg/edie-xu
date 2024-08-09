@@ -1,30 +1,62 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
+import Exhibition from "./Exhibition.jsx";
 import './App.css';
 import DisplayedProject from "./DisplayedProject.jsx";
-import { projects, videos, exhibitions } from "./projects-and-videos.js"
+import { projects, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
 
 const App = () => {
+    const [isHome, setIsHome] = useState(true);
+    const [isTransitioningToHome, setIsTransitioningToHome] = useState(false);
     const [selectedProject, setSelectedProject] = useState(null);
     const [selectedVideo, setSelectedVideo] = useState(null);
+    const [selectedExhibition, setSelectedExhibition] = useState(null);
     const [sideBarExpanded, setSideBarExpanded] = useState(false);
     const [videoSideBarExpanded, setVideoSideBarExpanded] = useState(false);
     const [contactInfoVisible, setContactInfoVisible] = useState(false);
     const [isScrolling, setIsScrolling] = useState(false);
     const [scrollTimeout, setScrollTimeout] = useState(null);
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const contactInfoRef = useRef(null);
+
+
 
     const mainContentRef = useRef(null);
-    const contactInfoRef = useRef(null);
+
+
+    const goHome = () => {
+        if (!isHome) {
+            setIsTransitioningToHome(true);
+            setTimeout(() => {
+                setSelectedProject(null);
+                setSelectedVideo(null);
+                setSelectedExhibition(null);
+                setSideBarExpanded(false);
+                setVideoSideBarExpanded(false);
+                setContactInfoVisible(false);
+                setIsHome(true);
+                setIsTransitioningToHome(false);
+            }, 1); // This should match the transition duration in CSS
+        }
+
+        if (mainContentRef.current) {
+            mainContentRef.current.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    };
+
 
     const handleProjectClick = (project) => {
         setSelectedProject(project);
         setSelectedVideo(null);
+        setIsHome(false)
     };
 
     const handleVideoClick = (video) => {
         setSelectedProject(null);
         setSelectedVideo(null);
+        setIsHome(false)
         setTimeout(() => setSelectedVideo(video), 1);
     };
 
@@ -54,6 +86,7 @@ const App = () => {
         if (videoSideBarExpanded) {
             setSelectedVideo(null);
         }
+        setIsHome(false)
         setVideoSideBarExpanded(!videoSideBarExpanded);
         setSideBarExpanded(false);
     };
@@ -62,6 +95,11 @@ const App = () => {
         setContactInfoVisible(!contactInfoVisible);
     }
 
+    const handleExhibitionClick = (exhibition) => {
+        setSelectedVideo(null);
+        setSelectedExhibition(exhibition);
+        setIsHome(false)
+    }
     const handleOutsideClick = (e) => {
         if (contactInfoVisible && contactInfoRef.current && !contactInfoRef.current.contains(e.target)) {
             setContactInfoVisible(false);
@@ -111,7 +149,7 @@ const App = () => {
     return (
         <div className="app-container">
             <aside className={`sidebar ${sideBarExpanded || videoSideBarExpanded ? 'expanded' : 'collapsed'}`}>
-                <h3 onClick={handleNameClick}>edie xu</h3>
+                <h3 onClick={goHome}>edie xu</h3>
                 <h3 className="clickable" onClick={handleWorksClick}>selected works</h3>
                 <ul>
                     {sideBarExpanded && projects.map((project) => (
@@ -129,25 +167,30 @@ const App = () => {
                     ))}
                 </ul>
             </aside>
-            <main className="main-content hide-scrollbar" ref={mainContentRef}>
-                {selectedProject ? (
-                    <DisplayedProject project={selectedProject}/>
-                ) : selectedVideo ? (
-                    <DisplayedVideo video={selectedVideo}/>
-                ) : (
-                    <div className="home-project-list-right hide-scrollbar" ref={mainContentRef}>
+            <main
+                className={`main-content hide-scrollbar ${isTransitioningToHome ? 'fading' : ''}`}
+                ref={mainContentRef}
+            >
+                {isHome ? (
+                    <div className="home-project-list-right hide-scrollbar">
                         <div className="container-header">
                             <h3> Selected exhibitions </h3>
                         </div>
-                        {exhibitions.map((project) => (
+                        {exhibitions2.map((exhibition) => (
                             <ProjectListing
-                                project={project}
-                                key={project.id}
-                                onProjectClick={handleProjectClick}
+                                project={exhibition}
+                                key={exhibition.id}
+                                onProjectClick={handleExhibitionClick}
                             />
                         ))}
                     </div>
-                )}
+                ) : selectedProject ? (
+                    <DisplayedProject project={selectedProject}/>
+                ) : selectedVideo ? (
+                    <DisplayedVideo video={selectedVideo}/>
+                ) : selectedExhibition ? (
+                    <Exhibition project={selectedExhibition}/>
+                ) : null}
             </main>
             <aside className={`top-right-menu ${isScrolling ? 'hidden' : ''}`}>
                 <a href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie_xu_cv.pdf" target="_blank"
@@ -179,14 +222,14 @@ const ProjectListing = ({
                 <p>{project.date}</p>
             </div>
             <div className="image-container">
-                <img className="project-image" src={project.images[0]} alt={project.title} />
+                <img className="project-image" src={project.images[0]} alt={project.title}/>
             </div>
         </div>
     );
 };
 
 
-const DisplayedVideo = ({ video }) => {
+const DisplayedVideo = ({video}) => {
     return (
         <div className="displayed-video-container">
             <h2>{video.title}</h2>
@@ -199,7 +242,7 @@ const DisplayedVideo = ({ video }) => {
                         preload="metadata"
                         poster={video.thumbnail}
                     >
-                        <source src={video.videoUrl} type="video/mp4" />
+                    <source src={video.videoUrl} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
