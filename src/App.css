@@ -9,6 +9,15 @@ body {
   color: black;
 }
 
+body a {
+  color: lightsteelblue;
+}
+body a:hover  {
+  color: black;
+  text-decoration-line: line-through;
+  cursor: none;
+}
+
 body p {
   margin: 0;
 }
@@ -112,7 +121,7 @@ body p {
   padding-left: 25vw;
   overflow-y: auto;
   max-height: calc(100vh - 52px);
-  padding-bottom: 60px;
+  padding-bottom: 40px;
 }
 
 /* Project listing */
@@ -169,7 +178,7 @@ body p {
 /** DISPLAYED EXHIBITION ** DISPLAYED EXHIBITION  ** DISPLAYED EXHIBITION  */
 
 .exhibition-info-container a {
-  color: rgba(205,220,211,0.9);
+  color: silver;
 
 }
 
@@ -205,6 +214,7 @@ body p {
 
 .exhibition-url a {
   padding: 50px 0 50px 0;
+  color: #f9f9f9;
 }
 
 /* Displayed project */
@@ -316,6 +326,10 @@ body p {
 }
 
 /* Responsive styles */
+
+ /* SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE
+     */
+
 @media (max-width: 768px) {
   .project-image {
     width: 100%;
@@ -323,9 +337,9 @@ body p {
   }
 
   .container-header {
-    position: fixed;
-    top: 20vh;
-    right: 45vw
+    position: relative;
+    top: 1px;
+    left: 40vw;
   }
   .top-right-menu {
     top: 0;
@@ -349,8 +363,7 @@ body p {
   }
 
   .main-content {
-    flex: 1;
-    padding: 31vh 24px 0 24px;
+    padding: 20vh 24px 0 24px;
   }
 
   .displayed-project-container,
@@ -359,7 +372,10 @@ body p {
   }
 
   .home-project-list-right {
+    /*padding: 31vh 24px 0 24px;*/
     position: relative;
+    right: 0;
+    padding: 0 0 0 0;
   }
 
   aside {
@@ -368,6 +384,10 @@ body p {
     flex-direction: row;
   }
 
+  .top-right-menu {
+    top: 5vh;
+    font-size: 1.5em;
+  }
   .sidebar {
     width: 80vw;
     margin: 0;
@@ -388,6 +408,7 @@ body p {
 
   .app-container {
     flex-direction: column;
+    flex: 1;
   }
 
   .contact-menu {
@@ -412,7 +433,7 @@ body p {
     object-fit: fill;
   }
   .displayed-project-image {
-    width: 41vw;
+    width: 600px;
     object-fit: fill;
   }
 
@@ -422,7 +443,7 @@ body p {
   }
 
   .displayed-project-container {
-    width: 41vw;
+    width: 600px;
     padding-left: 23vw;
     padding-top: 52px;
     flex-direction: column;

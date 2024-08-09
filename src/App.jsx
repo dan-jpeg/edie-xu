@@ -61,9 +61,6 @@ const App = () => {
     };
 
     const handleWorksClick = () => {
-        if (sideBarExpanded) {
-            setSelectedProject(null);
-        }
         setSideBarExpanded(!sideBarExpanded);
     };
 
@@ -86,7 +83,6 @@ const App = () => {
         if (videoSideBarExpanded) {
             setSelectedVideo(null);
         }
-        setIsHome(false)
         setVideoSideBarExpanded(!videoSideBarExpanded);
         setSideBarExpanded(false);
     };
@@ -120,31 +116,6 @@ const App = () => {
         setScrollTimeout(timeout);
     }, [scrollTimeout]);
 
-    useEffect(() => {
-        const mainContent = document.querySelector('.main-content');
-        if (mainContent) {
-            mainContent.addEventListener('scroll', handleScroll);
-        }
-
-        document.addEventListener('click', handleOutsideClick);
-
-        const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
-        };
-
-        window.addEventListener('resize', handleResize);
-
-        return () => {
-            if (mainContent) {
-                mainContent.removeEventListener('scroll', handleScroll);
-            }
-            if (scrollTimeout) {
-                clearTimeout(scrollTimeout);
-            }
-            document.removeEventListener('click', handleOutsideClick);
-            window.removeEventListener('resize', handleResize);
-        };
-    }, [handleScroll, scrollTimeout]);
 
     return (
         <div className="app-container">
