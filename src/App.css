@@ -382,6 +382,14 @@ body p {
     padding-bottom: 30px;
   }
 
+  .displayed-project-container {
+    flex-direction: column;
+  }
+
+  .displayed-project-image, .displayed-exhibition-image {
+    width: 100%;
+  }
+
   .sidebar {
     width: 100%;
     position: static;
@@ -397,6 +405,7 @@ body p {
   .contact-menu {
     position: static;
     margin: 20px 24px;
+
   }
 }
 
