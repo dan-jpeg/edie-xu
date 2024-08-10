@@ -382,8 +382,9 @@ body p {
     padding-bottom: 30px;
   }
 
-  .displayed-project-container {
+  .displayed-project-container, .displayed-exhibition-container {
     flex-direction: column;
+    padding: 0 18px 12px 18px;
   }
 
   .displayed-project-image, .displayed-exhibition-image {
@@ -404,10 +405,16 @@ body p {
 
   .contact-menu {
     position: static;
-    margin: 20px 24px;
+    margin: 40px 24px;
 
   }
+
+
 }
+
+
+
+
 
 @media (min-width: 769px) {
   .project-image {
