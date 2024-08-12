@@ -38,14 +38,14 @@ const Exhibition = ({ project: exhibition }) => {
                         key={exhibition.images[currentImageIndex]}
                         alt={`${exhibition.title} ${currentImageIndex + 1}`}
                     />
-                    <p className="image-index">
-                        {currentImageIndex + 1}/{exhibition.images.length}
-                    </p>
-                </div>
 
+                </div>
+                <p className="image-index">
+                    {currentImageIndex + 1}/{exhibition.images.length}
+                </p>
                 <div className="image-navigation">
-                    <h2 onClick={goToPreviousImage}> {"<"} </h2>
-                    <h2 onClick={goToNextImage}> {">"} </h2>
+                    <h2 className="left-chev" onClick={goToPreviousImage}> {"<"} </h2>
+                    <h2 className="right-chev"onClick={goToNextImage}> {">"} </h2>
                 </div>
                 <p className="text-content">{exhibition.textContent}</p>
                 <p>{exhibition.footnote}</p>

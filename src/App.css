@@ -70,6 +70,23 @@ body p {
   background-color: #fff;
 }
 
+.media-navigation {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 0.8em;
+}
+
+h2.right-chev {
+  padding-left: 90%;
+}
+
+h2.left-chev {
+  padding-left: 0%;
+}
+
+
+
 /* Sidebar */
 .sidebar {
   position: fixed;
@@ -82,6 +99,7 @@ body p {
   transition: all 0.3s ease-in-out;
 
 }
+
 
 .sidebar h3 {
   margin-bottom: 0.5em;
@@ -245,10 +263,6 @@ body p {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-.image-index {
-  position: relative;
-  right: 0%;
-}
 
 /* Video player */
 .video-player {
@@ -285,17 +299,40 @@ body p {
   opacity: 0;
 }
 
+p.image-index {
+  padding-left: 50%;
+  right: 100%
+}
+
+
+.displayed-project-details {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 36px ;
+  position: relative;
+  left: 50%;
+}
+
+.displayed-title-container {
+  width: 300px;
+}
+.image-navigation {
+  display: flex;
+  flex-direction: row;
+}
 /* Contact info */
 .contact-menu {
   position: fixed;
   left: 32px;
   bottom: 48px;
   padding: 10px;
+  display: block;
   border-radius: 5px;
   transition: all 0.3s ease;
   overflow: hidden;
   max-height: 40px;
-  width: 160px;
+  width: 100px;
   cursor: pointer;
   z-index: 1000;
 }
@@ -306,10 +343,13 @@ body p {
 .contact-menu:hover,
 .contact-menu:focus,
 .contact-menu:active {
-  max-height: 200px;
-  width: 250px;
+  max-height: 240px;
+  width: 150px;
 }
 
+.contact-menu img {
+  width: 72px
+}
 .contact-menu h3 {
   margin: 0 0 10px 0;
 }
@@ -327,15 +367,28 @@ body p {
 
 /* Responsive styles */
 
- /* SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE
-     */
+/* SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE
+    */
 
 @media (max-width: 768px) {
   body {
     overflow: hidden; /* Prevent body scrolling */
   }
 
-  .app-container {
+  .video-player {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 90vw;
+  }
+  .displayed-project-details {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 36px 24px;
+  }
+
+
+    .app-container {
     flex-direction: column;
     height: 100vh; /* Full viewport height */
   }
@@ -405,7 +458,7 @@ body p {
 
   .contact-menu {
     position: static;
-    margin: 40px 24px;
+    margin: 24px 54px;
 
   }
 
@@ -443,11 +496,16 @@ body p {
 
   .displayed-project-container {
     width: 600px;
-    padding-left: 23vw;
+    padding-left: 128px;
     padding-top: 52px;
     flex-direction: column;
   }
 
+
+
+  .displayed-video-container {
+    padding-left: 128px;
+  }
   .title-container {
     padding: 0 40px 60px 0;
   }

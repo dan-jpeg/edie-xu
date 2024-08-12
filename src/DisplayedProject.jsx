@@ -1,49 +1,66 @@
-
-
 import { useState } from 'react';
 import PropTypes from 'prop-types';
 
 const DisplayedProject = ({ project }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentMediaIndex, setCurrentMediaIndex] = useState(0);
 
-    const goToPreviousImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === 0 ? project.images.length - 1 : prevIndex - 1
+    const goToPreviousMedia = () => {
+        setCurrentMediaIndex((prevIndex) =>
+            prevIndex === 0 ? project.media.length - 1 : prevIndex - 1
         );
     };
 
-    const goToNextImage = () => {
-        setCurrentImageIndex((prevIndex) =>
-            prevIndex === project.images.length - 1 ? 0 : prevIndex + 1
+    const goToNextMedia = () => {
+        setCurrentMediaIndex((prevIndex) =>
+            prevIndex === project.media.length - 1 ? 0 : prevIndex + 1
         );
+    };
+
+    const renderMedia = () => {
+        const currentMedia = project.media[currentMediaIndex];
+        if (currentMedia.type === 'image') {
+            return (
+                <img
+                    className="displayed-project-image"
+                    src={currentMedia.url}
+                    alt={`${project.title} ${currentMediaIndex + 1}`}
+                />
+            );
+        } else if (currentMedia.type === 'video') {
+            return (
+                <video
+                    className="video-player"
+                    src={currentMedia.url}
+                    controls
+                />
+            );
+        }
+        return null;
     };
 
     return (
         <div className="displayed-project-container">
-            <div className="title-container">
+            <div className="displayed-title-container">
                 <p className="displayed-project-title">{project.title}</p>
-                <p>{project.material}</p>
-                <p>{project.category}</p>
-                <p>{project.location}</p>
-            </div>
-            <div className="single-image-container">
+                <div className="displayed-project-details">
+                    <p>{project.year}</p>
+                    <p>{project.dimensions}</p>
+                    <p>{project.material}</p>
 
-
-                <div className="image-wrapper">
-                    <img
-                        className="displayed-project-image"
-                        src={project.images[currentImageIndex]}
-                        key={project.images[currentImageIndex]}
-                        alt={`${project.title} ${currentImageIndex + 1}`}
-                    />
-                    <p className="image-index">
-                        {currentImageIndex + 1}/{project.images.length}
-                    </p>
                 </div>
 
-                <div className="image-navigation">
-                    <h2 onClick={goToPreviousImage}> {"<"} </h2>
-                    <h2 onClick={goToNextImage}> {">"} </h2>
+            </div>
+            <div className="single-media-container">
+                <div className="media-wrapper">
+                    {renderMedia()}
+
+                </div>
+                <div className="media-navigation">
+                    <h2 className="left-chev" onClick={goToPreviousMedia}> {"<"} </h2>
+                    <p className="media-index">
+                        {currentMediaIndex + 1}/{project.media.length}
+                    </p>
+                    <h2 className="right-chev" onClick={goToNextMedia}> {">"} </h2>
                 </div>
                 <p>{project.description}</p>
             </div>
@@ -58,7 +75,10 @@ DisplayedProject.propTypes = {
         material: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
         location: PropTypes.string.isRequired,
-        images: PropTypes.arrayOf(PropTypes.string).isRequired
+        media: PropTypes.arrayOf(PropTypes.shape({
+            type: PropTypes.oneOf(['image', 'video']).isRequired,
+            url: PropTypes.string.isRequired
+        })).isRequired
     }).isRequired
 };
 

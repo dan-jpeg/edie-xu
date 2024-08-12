@@ -2,8 +2,10 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import Exhibition from "./Exhibition.jsx";
 import './App.css';
+import envelopeClosed from './assets/envelope_v3.png';
+import envelopeOpen from './assets/envelope-open.png';
 import DisplayedProject from "./DisplayedProject.jsx";
-import { projects, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
+import { selectedWorks, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
 
 const App = () => {
     const [isHome, setIsHome] = useState(true);
@@ -123,7 +125,7 @@ const App = () => {
                 <h3 onClick={goHome}>edie xu</h3>
                 <h3 className="clickable" onClick={handleWorksClick}>selected works</h3>
                 <ul>
-                    {sideBarExpanded && projects.map((project) => (
+                    {sideBarExpanded && selectedWorks.map((project) => (
                         <li key={project.id} onClick={() => handleProjectClick(project)}>
                             {project.title}
                         </li>
@@ -164,23 +166,27 @@ const App = () => {
                 ) : null}
             </main>
             <aside className={`top-right-menu ${isScrolling ? 'hidden' : ''}`}>
-                <a href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/edie_xu_cv.pdf" target="_blank"
+                <a href="https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/assets/Edie+X+Resume-1.pdf" target="_blank"
                    rel="noopener noreferrer">
                     download cv
                 </a>
             </aside>
-
             <div className="contact-menu">
-                <h3>edie xu</h3>
+                <img src={envelopeClosed} alt="Contact"/>
                 {/*<p>Studio</p>*/}
                 <p>s: New York, USA</p>
                 <p>e: <a href="mailto:ediexxu@gmail.com">ediexxu@gmail.com</a></p>
                 <p>i: <a href="http://instagram.com/e__xu">e__xu</a></p>
             </div>
+
+
+            <div className="envelope">
+
+            </div>
         </div>
+
     );
 };
-
 const ProjectListing = ({
                             project, onProjectClick
                         }) => {
