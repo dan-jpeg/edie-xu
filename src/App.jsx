@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import PropTypes from "prop-types";
 import Exhibition from "./Exhibition.jsx";
 import './App.css';
-import envelopeClosed from './assets/envelope_v3.png';
+import envelopeClosed from './assets/envelope_v4.png';
 import envelopeOpen from './assets/envelope-open.png';
 import DisplayedProject from "./DisplayedProject.jsx";
 import { selectedWorks, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
@@ -141,9 +141,10 @@ const App = () => {
                 </ul>
             </aside>
             <main
-                className={`main-content hide-scrollbar ${isTransitioningToHome ? 'fading' : ''}`}
+                className={`main-content hide-scrollbar ${isTransitioningToHome ? 'fading' : ''} ${selectedExhibition ? 'showing-exhibition' : ''}`}
                 ref={mainContentRef}
             >
+
                 {isHome ? (
                     <div className="home-project-list-right hide-scrollbar">
                         <div className="container-header">

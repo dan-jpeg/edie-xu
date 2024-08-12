@@ -325,14 +325,16 @@ p.image-index {
 .contact-menu {
   position: fixed;
   left: 32px;
-  bottom: 48px;
+  bottom: 36px;
   padding: 10px;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
   border-radius: 5px;
   transition: all 0.3s ease;
   overflow: hidden;
   max-height: 40px;
-  width: 100px;
+  width: 150px;
   cursor: pointer;
   z-index: 1000;
 }
@@ -348,14 +350,15 @@ p.image-index {
 }
 
 .contact-menu img {
-  width: 72px
+  width: 44px;
+  padding-bottom: 12px;
 }
 .contact-menu h3 {
   margin: 0 0 10px 0;
 }
 
 .contact-menu p {
-  margin: 5px 0;
+  margin: 6px 0;
   display: none;
 }
 
@@ -374,6 +377,12 @@ p.image-index {
   body {
     overflow: hidden; /* Prevent body scrolling */
   }
+
+
+    .main-content.showing-exhibition {
+      padding: 0;
+    }
+
 
   .video-player {
     margin-top: 20px;
@@ -458,8 +467,16 @@ p.image-index {
 
   .contact-menu {
     position: static;
-    margin: 24px 54px;
+    margin: 54px 60%;
+    align-items: flex-end;
+    display: flex;
+    flex-direction: column;
 
+  }
+
+  .contact-menu img {
+      width: 44px;
+      padding-bottom: 12px;
   }
 
 
