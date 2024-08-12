@@ -55,11 +55,13 @@ const DisplayedProject = ({ project }) => {
                     {renderMedia()}
 
                 </div>
-                <div className="media-navigation">
+                <p className="image-index">
+                    {currentMediaIndex + 1}/{project.media.length}
+                </p>
+
+                <div className="image-navigation">
                     <h2 className="left-chev" onClick={goToPreviousMedia}> {"<"} </h2>
-                    <p className="media-index">
-                        {currentMediaIndex + 1}/{project.media.length}
-                    </p>
+
                     <h2 className="right-chev" onClick={goToNextMedia}> {">"} </h2>
                 </div>
                 <p>{project.description}</p>
@@ -75,6 +77,8 @@ DisplayedProject.propTypes = {
         material: PropTypes.string.isRequired,
         category: PropTypes.string.isRequired,
         location: PropTypes.string.isRequired,
+        year: PropTypes.string,
+        dimensions: PropTypes.string,
         media: PropTypes.arrayOf(PropTypes.shape({
             type: PropTypes.oneOf(['image', 'video']).isRequired,
             url: PropTypes.string.isRequired

@@ -40,12 +40,15 @@ const Exhibition = ({ project: exhibition }) => {
                     />
 
                 </div>
+
                 <p className="image-index">
                     {currentImageIndex + 1}/{exhibition.images.length}
                 </p>
+
                 <div className="image-navigation">
                     <h2 className="left-chev" onClick={goToPreviousImage}> {"<"} </h2>
-                    <h2 className="right-chev"onClick={goToNextImage}> {">"} </h2>
+
+                    <h2 className="right-chev" onClick={goToNextImage}> {">"} </h2>
                 </div>
                 <p className="text-content">{exhibition.textContent}</p>
                 <p>{exhibition.footnote}</p>

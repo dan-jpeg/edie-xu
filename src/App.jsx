@@ -3,9 +3,11 @@ import PropTypes from "prop-types";
 import Exhibition from "./Exhibition.jsx";
 import './App.css';
 import envelopeClosed from './assets/envelope_v4.png';
-import envelopeOpen from './assets/envelope-open.png';
+// import envelopeOpen from './assets/envelope-open.png';
 import DisplayedProject from "./DisplayedProject.jsx";
-import { selectedWorks, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
+import { selectedWorks, videos, exhibitions2 } from "./projects-and-videos.js"
+import ReactPlayer from 'react-player/lazy'
+
 
 const App = () => {
     const [isHome, setIsHome] = useState(true);
@@ -19,6 +21,7 @@ const App = () => {
     const [isScrolling, setIsScrolling] = useState(false);
     const [scrollTimeout, setScrollTimeout] = useState(null);
     const contactInfoRef = useRef(null);
+
 
 
 
@@ -40,12 +43,11 @@ const App = () => {
             }, 1); // This should match the transition duration in CSS
         }
 
-        if (mainContentRef.current) {
             mainContentRef.current.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
-        }
+
     };
 
 
@@ -53,11 +55,13 @@ const App = () => {
         setSelectedProject(project);
         setSelectedVideo(null);
         setIsHome(false)
+        setVideoSideBarExpanded(false)
     };
 
     const handleVideoClick = (video) => {
         setSelectedProject(null);
         setSelectedVideo(null);
+        setSideBarExpanded(false)
         setIsHome(false)
         setTimeout(() => setSelectedVideo(video), 1);
     };
@@ -66,27 +70,10 @@ const App = () => {
         setSideBarExpanded(!sideBarExpanded);
     };
 
-    const handleNameClick = () => {
-        setSelectedProject(null);
-        setSelectedVideo(null);
-        setSideBarExpanded(false);
-        setVideoSideBarExpanded(false);
-        setContactInfoVisible(false);
-
-        if (mainContentRef.current) {
-            mainContentRef.current.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    }
-
     const handleVideoWorksClick = () => {
-        if (videoSideBarExpanded) {
-            setSelectedVideo(null);
-        }
+
+
         setVideoSideBarExpanded(!videoSideBarExpanded);
-        setSideBarExpanded(false);
     };
 
     const handleContactClick = () => {
@@ -95,6 +82,7 @@ const App = () => {
 
     const handleExhibitionClick = (exhibition) => {
         setSelectedVideo(null);
+        setVideoSideBarExpanded(false)
         setSelectedExhibition(exhibition);
         setIsHome(false)
     }
@@ -210,20 +198,21 @@ const ProjectListing = ({
 const DisplayedVideo = ({video}) => {
     return (
         <div className="displayed-video-container">
-            <h2>{video.title}</h2>
-            <p>{video.year}</p>
-            <p>{video.duration}</p>
-            {video.videoUrl ? (
-                <div className="video-player">
-                    <video
-                        controls
-                        preload="metadata"
-                        poster={video.thumbnail}
-                    >
-                    <source src={video.videoUrl} type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
+            <div className="video-title-container">
+                <h2 className="video-title">{video.title}</h2>
+                <div className="video-details">
+                    <p>{video.year}</p>
+                    <p>{video.duration}</p>
                 </div>
+            </div>
+
+
+            {video.videoUrl ? (
+                <div className="video-wrapper">
+                    <ReactPlayer url={video.videoUrl} playing={true} width='100%' height='100%' />
+                    </div>
+
+
             ) : (
                 <div className="video-player">
                     <p>Video not available</p>
