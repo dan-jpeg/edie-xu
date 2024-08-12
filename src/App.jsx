@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Exhibition from "./Exhibition.jsx";
 import './App.css';
 import DisplayedProject from "./DisplayedProject.jsx";
-import { projects, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
+import { selectedWorks, videos, exhibitions, exhibitions2 } from "./projects-and-videos.js"
 
 const App = () => {
     const [isHome, setIsHome] = useState(true);
@@ -80,11 +80,10 @@ const App = () => {
     }
 
     const handleVideoWorksClick = () => {
-        if (videoSideBarExpanded) {
-            setSelectedVideo(null);
-        }
+        // if (videoSideBarExpanded) {
+        //     setSelectedVideo(null);
+        // }
         setVideoSideBarExpanded(!videoSideBarExpanded);
-        setSideBarExpanded(false);
     };
 
     const handleContactClick = () => {
@@ -123,7 +122,7 @@ const App = () => {
                 <h3 onClick={goHome}>edie xu</h3>
                 <h3 className="clickable" onClick={handleWorksClick}>selected works</h3>
                 <ul>
-                    {sideBarExpanded && projects.map((project) => (
+                    {sideBarExpanded && selectedWorks.map((project) => (
                         <li key={project.id} onClick={() => handleProjectClick(project)}>
                             {project.title}
                         </li>
@@ -186,7 +185,7 @@ const ProjectListing = ({
                         }) => {
     return (
         <div className="project-listing-container" onClick={() => onProjectClick(project)}>
-            <div className="title-container">
+            <div className="listing-title-container">
                 <p className="listing-title">{project.title}</p>
                 {/*<p>{project.material}</p>*/}
                 <p>{project.location}</p>

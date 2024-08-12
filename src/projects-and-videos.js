@@ -1,179 +1,153 @@
-const projects = [
+// JSON DATA FOR CONTENT. SELECTED WORKS, VIDEO CONTENT, AND SELECTED EXHIBITIONS //
+/// JSON DATA FOR CONTENT. SELECTED WORKS, VIDEO CONTENT, AND SELECTED EXHIBITIONS //
+// JSON DATA FOR CONTENT. SELECTED WORKS, VIDEO CONTENT, AND SELECTED EXHIBITIONS //
+// JSON DATA FOR CONTENT. SELECTED WORKS, VIDEO CONTENT, AND SELECTED EXHIBITIONS //
+
+
+const selectedWorks = [
     {
         id: "0",
         category: " ",
         location: " ",
         title: "CMMMMC - Ceramic Meets Metal Metal Meets Ceramic",
         description: "",
-        material: "Oxidized metal and broken fired stoneware",
         year: "2024",
         dimensions: "70 x 23 x 94 inches (177 x 58 x 240 cm)",
+        material: "Oxidized metal and broken fired stoneware",
         duration: "15 min",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_01.png", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_02.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_03.JPG"]
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_01.png" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_02.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/ceramic_metal_03.JPG" }
+        ]
     },
     {
         id: "1",
-        category: "Group Exhibition",
-        location: "Shanghart, ShangHai",
-        title: "limited intentionality",
-        description: "if, as kant claimed, schematization is the very mechanism for human beings' use of intelligence, then vision can be considered apremise for human reason.  edie xu's works reveal the effect of sexuality on intentional activities, where the relation between body schema and eroticism always implies the object-oriented dimension.",
+        category: " ",
+        location: " ",
+        title: "02 20 ",
+        description: "",
+        year: "2023",
+        dimensions: "12 x 12 x 27 inches (30 x 30 x 69cm)",
         material: "stoneware",
-        year: "2024",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_01.jpeg","https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_02.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_03.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_04.jpeg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/limited_intentionality_05.jpeg"]
+        media: [
+            { type: "image", url: "https://i.ibb.co/DLZRPMf/PNG-image-3.jpg" },
+            { type: "image", url: "https://i.ibb.co/93ZqQmn/PNG-image-1.jpg" },
+            { type: "image", url: "https://i.ibb.co/tHRbPhC/PNG-image-2.jpg" }
+        ]
     },
     {
         id: "2",
         category: " ",
         location: " ",
-        title: "0 20 ",
+        title: "Thine air",
         description: "",
-        material: "stoneware",
         year: "2023",
-        images: ["https://i.ibb.co/DLZRPMf/PNG-image-3.jpg", "https://i.ibb.co/93ZqQmn/PNG-image-1.jpg", "https://i.ibb.co/tHRbPhC/PNG-image-2.jpg"],
+        dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
+        material: "unglazed stoneware",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_01.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_02.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_03.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_04.jpg" }
+        ]
     },
     {
         id: "3",
         category: " ",
         location: " ",
-        title: "Thine air",
+        title: "oxygenated  ",
         description: "",
-        material: "unglazed stoneware",
         year: "2023",
         dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_02.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_03.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/thine_air_04.jpg"]
+        material: "stoneware",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png" },
+            { type: "image", url: "https://i.ibb.co/TLsfwrc/1-Artboard-1.png" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_04.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_05.jpg" }
+        ]
     },
-
     {
         id: "4",
         category: " ",
         location: " ",
-        title: "oxygenated  ",
+        title: "philtrum",
         description: "",
-        material: "stoneware",
-        year: "2024",
-        dimensions: "34 x 23 x 15 inches (86 x 58 x 38 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_02.png", "https://i.ibb.co/TLsfwrc/1-Artboard-1.png", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_04.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/oxygenated_05.jpg"],
+        year: "2022",
+        dimensions: "75 x 65 x 28 inches(190 x 165 x 71cm)",
+        material: "stoneware with wash",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_01.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_02.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_03.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_04.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_05.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_06.jpg" }
+        ]
     },
     {
         id: "5",
         category: " ",
         location: " ",
-        title: "philtrum",
+        title: "Being series 01",
         description: "",
-        material: "stoneware with wash",
         year: "2022",
-        images:  [
-            "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_02.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_03.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_04.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_05.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/philtrum_06.jpg"
-        ],
+        dimensions: "24 x 18 x 15 inches (60 x 45 x 38 cm)",
+        material: "Unglazed stoneware",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_01.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_02.png" }
+        ]
     },
-    // {
-    //     id: "5",
-    //     category: " ",
-    //     location: " ",
-    //     title: "N...S...",
-    //     description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    //     material: "stoneware",
-    //     year: "2024",
-
-    // },
-
     {
         id: "6",
         category: " ",
         location: " ",
-        title: "Being series 01",
+        title: "Being series 02",
         description: "",
-        material: "Unglazed stoneware",
         year: "2022",
-        dimensions: "24 x 18 x 15 inches (60 x 45 x 38 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-01_02.png"]
+        dimensions: "35 x 30 inches (89 x 76 cm)",
+        material: "Terracotta",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-02_02.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-02_02.jpg" }
+        ]
     },
     {
         id: "7",
         category: " ",
         location: " ",
-        title: "Being series 02",
+        title: "White (resonance)",
         description: "",
-        material: "Terracotta",
-        year: "2023",
-        dimensions: "35 x 30 inches (89 x 76 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-02_02.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/being-02_02.jpg"]
+        year: "2022",
+        dimensions: "48 x 24 x 32 inches (121 x 60 x 81 cm)",
+        material: "Stoneware with glaze",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_01.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_02.png" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_03.png" }
+        ]
     },
     {
         id: "8",
         category: " ",
         location: " ",
-        title: "White (resonance)",
-        description: "",
-        material: "Stoneware with glaze",
-        year: "2022",
-        dimensions: "48 x 24 x 32 inches (121 x 60 x 81 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_02.png", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/white_resonance_03.png"]
-    },
-    {
-        id: "9",
-        category: " ",
-        location: " ",
         title: "Peculiar intimacy",
         description: "",
-        material: "Machine knit, metal and plaster",
         year: "2022",
         dimensions: "75 x 65 x 28 inches (190 x 165 x 71 cm)",
-        images: ["https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_01.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_02.jpg", "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_03.jpg"]
+        material: "Machine knit, metal and plaster",
+        media: [
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_01.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_02.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_03.jpg" }
+        ]
     },
-    // {
-    //     id: "6",
-    //     category: " ",
-    //     location: " ",
-    //     title: "Out of place",
-    //     description: "consectet cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
-    //     material: "stoneware",
-    //     year: "2024",
-    //     images:  [
-    //         "https://i.ibb.co/16J3rRD/1-V6-A8863-copy.jpg",
-    //         "https://i.ibb.co/6bXvn8W/1-V6-A8872-copy.jpg",
-    //         "https://i.ibb.co/4T0hLLw/1-V6-A8924-copy-2.jpg",
-    //         "https://i.ibb.co/FX9YQ0p/1-V6-A8962-copy.jpg",
-    //         "https://i.ibb.co/8s3FPvY/3-L7-A6632-copy.jpg",
-    //         "https://i.ibb.co/n6hbxWD/3-L7-A6633-copy.jpg",
-    //         "https://i.ibb.co/fD09Nk8/3-L7-A8971-copy.jpg",
-    //         "https://i.ibb.co/Tbkm63M/3-L7-A8974-copy.jpg",
-    //         "https://i.ibb.co/71KxxPS/3-L7-A8979-copy.jpg",
-    //         "https://i.ibb.co/LxCmkYV/3-L7-A8981-copy.jpg",
-    //         "https://i.ibb.co/RY133Ns/Wechat-IMG221-copy.jpg",
-    //         "https://i.ibb.co/V3vVrBK/Wechat-IMG223-copy-2.jpg"
-    //     ],
-    // },
-
-
-
-    // {
-    //     id: "10",
-    //     category: " ",
-    //     location: " ",
-    //     title: "02 20",
-    //     description: "A stoneware piece created in 2023",
-    //     material: "Stoneware",
-    //     year: "2023",
-    //     dimensions: "12 x 12 x 27 inches (30 x 30 x 69 cm)",
-    //     images: ["placeholder1.jpg", "placeholder2.jpg"]
-    // },
-    //
-    // {
-    //     id: "14",
-    //     category: " ",
-    //     location: " ",
-    //     title: "Being series 02",
-    //     description: "A terracotta piece created in 2023",
-    //     material: "Terracotta",
-    //     year: "2023",
-    //     dimensions: "35 x 30 inches (89 x 76 cm)",
-    //     images: ["placeholder1.jpg", "placeholder2.jpg"]
-    // },
-
 ];
 
-export { projects };
+export { selectedWorks };
 
 const videos = [
     {

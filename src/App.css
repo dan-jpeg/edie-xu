@@ -132,7 +132,8 @@ body p {
 
 .title-container {
   display: block;
-  width: 200px;
+  align-content: end;
+
   padding-bottom: 60px;
   /*text-transform: lowercase;*/
 }
@@ -226,6 +227,7 @@ body p {
 .displayed-project-title {
   font-size: 1.2em;
   font-style: italic;
+  padding-bottom: 16pz
 }
 
 .image-navigation {
@@ -325,6 +327,20 @@ body p {
   display: block;
 }
 
+/*.media-navigation h2 {*/
+/*  background-color: rgba(0,0,0,0.5);*/
+/*  color: white;*/
+/*!*  padding: 10px 15px;*!*/
+/*  border-radius: 50%;*/
+/*  cursor: pointer;*/
+/*}*/
+
+.media-navigation {
+  width: 16px;
+  cursor: e-resize;
+}
+
+
 /* Responsive styles */
 
  /* SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE SMALL SCREEN / MOBILE
@@ -335,7 +351,11 @@ body p {
     overflow: hidden; /* Prevent body scrolling */
   }
 
+  .sidebar {
+    width: 15vw;
+  }
   .app-container {
+    padding-left: 16px;
     flex-direction: column;
     height: 100vh; /* Full viewport height */
   }
@@ -385,6 +405,7 @@ body p {
   .displayed-project-container, .displayed-exhibition-container {
     flex-direction: column;
     padding: 0 18px 12px 18px;
+    width: 90vw;
   }
 
   .displayed-project-image, .displayed-exhibition-image {
@@ -410,7 +431,9 @@ body p {
   }
 
 
+
 }
+
 
 
 
@@ -421,6 +444,8 @@ body p {
     width: 300px;
     object-fit: fill;
   }
+
+
 
   .displayed-exhibition-container {
     width: 600px;
