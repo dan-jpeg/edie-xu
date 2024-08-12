@@ -402,8 +402,13 @@ p.image-index {
     overflow: hidden; /* Prevent body scrolling */
   }
 
+  .video-wrapper {
+    width: 90vw
+  }
 
-    .main-content.showing-exhibition {
+
+
+  .main-content.showing-exhibition {
       padding: 0;
     }
 
