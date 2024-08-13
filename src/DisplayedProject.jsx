@@ -23,6 +23,7 @@ const DisplayedProject = ({ project }) => {
                 <img
                     className="displayed-project-image"
                     src={currentMedia.url}
+                    key={currentMedia.url}
                     alt={`${project.title} ${currentMediaIndex + 1}`}
                 />
             );
