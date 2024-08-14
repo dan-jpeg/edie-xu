@@ -137,8 +137,8 @@ const selectedWorks = [
         material: "Machine knit, metal and plaster",
         media: [
             { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_01.jpg" },
-            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_02.jpg" },
-            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_03.jpg" }
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_02-small.jpg" },
+            { type: "image", url: "https://edie-xu-portfolio.s3.us-east-2.amazonaws.com/photos/peculiar_intimacy_03-small.jpg" }
         ]
     },
 ];
